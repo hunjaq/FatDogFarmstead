@@ -5,12 +5,20 @@
 <title>FatDog Farmstead</title>
 <style>
 <!-- maroon: #630031, orange: #cf4420 -->
-header {} <!-- header padding -->
-body {background-color: black;}
-h2 {color: #cf4420;
-	border: 4px solid #630031;
-	background-color: #630031;}
-.btn { <!-- aspects for all button classes -->
+body {
+	background-color: black;
+	}
+p {
+	font-size: 20px;
+	}
+h1 {color: #cf4420;
+	font-family: georgia;
+	font-size: 50px;
+	}
+th {
+	padding: 45px;
+	}
+btn { <!-- aspects for all button classes -->
 	border: none;
 	background-color: inherit;
 	padding: 14px 28px;
@@ -23,14 +31,12 @@ h2 {color: #cf4420;
 </head>
 
 <body>
-<header>
+<header style="background-color:#630031;"> <!-- top of page -->
 	<table style="width:100%;">
 		<tr> <!-- 1 row -->
 			<td style="text-align:left;">
 			<!-- logo image, left aligned -->
-			<img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 5px 5px 10px 10px;">
-			<!-- image as button to menu
-			<a href="****"> *LOGO* </a> -->
+			<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 5px 10px 5px 25px;"> </a>
 			</td>
 			
 			<!-- other tabs to other sections, right aligned -->
@@ -38,8 +44,8 @@ h2 {color: #cf4420;
 			<!-- home, menu, contact us -->
 				<table align="right">
 					<tr> <!-- *make buttons -->
-						<td> <button class="btn home" style="color:orange"> Home </button> </td>
-						<td> <button class="btn menu"> Menu </button> </td>
+						<td> <button class="btn home" style="color:orange; border:none; padding: 50px 20px 0px 15px;"> Home </button> </td>
+						<td> <a href="MenuPage.html"> <button class="btn menu"> Menu </button> </a> </td>
 						<td> <button class="btn contact"> Contact Us </button> </td>
 					</tr>
 				</table>
@@ -48,35 +54,35 @@ h2 {color: #cf4420;
 	</table>			
 </header>
 
-<table style="width:100%; height:200px; align:center;"> <!-- tabled site, allow for cells -->
+<table style="width:80%; height:200px; align:center;" align="center"> <!-- tabled site, allow for cells -->
 	<tr> <!-- first block of site, pic of chicken and desc -->
-		<td style="background-image: url('IMG_2962.jpg'); width:200px; height:200px; text-align:center;">
-			<h2 title="image, description"> Local Pasture-Raised Poultry </h2>
+		<td style="background-image: url('Chickens_resized_1.jpg'); width:800px; height:600px; text-align:left;">
+			<h1 title="image, description"> Local Pasture-Raised Poultry </h1>
 			<p>No Hormones, no antibiotics, no steroids, no pharmaceticals</p>
 			<!-- button for to menu -->
 		</td>
 	</tr>
-	<tr> <!-- second block, farm fresh, button? -->
-		<td> 
-			<h2> Farm fresh chicken and eggs </h2>
+	<tr> <!-- second block, farm fresh, button?  **scrolling picture album? -->
+		<td style="text-align:right; width:800px; height:450px;"> 
+			<h1 style="font-size:40px;"> Farm fresh chicken and eggs </h1>
 			<p> Eggs by the dozen, chicken by the pound </p>
-			<!-- button? -->
+			<input="button" onClick="menu()"
 		</td>
 	</tr>
-	<tr> <!-- third block, about us -->
+	<tr style="text-align:center; background-color:#630031;"> <!-- third block, about us -->
 		<td>
-			<h2> About Us </h2>
+			<h1> About Us </h1>
 			<!-- table -->
-			<table>
-			<tr> <!-- headers row-->
-				<th> Healthy </th>
-				<th> Affordability </th>
-				<th> IDEK </th>
+			<table align="center">
+			<tr style="font-size:25px; border: 2 px solid white; text-align:center;"> <!-- headers row-->
+				<th style="border-right: 4px solid white;"> Healthy </th>
+				<th style="border-right: 4px solid white;"> Affordable </th>
+				<th> IDEK </th> 
 			</tr>
-			<tr> <!-- data rows -->
-				<td> Lorem </td>
-				<td> ipsum </td>
-				<td> lipsum </td>
+			<tr style="text-align:center; background-color:yellow;"> <!-- data rows -->
+				<td style="padding:10px 10px 45px 45px; font-size:20px; border-right: 4px solid white; text-align:center;"> Lorem </td>
+				<td style="padding: 10px 10px 45px 45px; font-size:20px; border-right: 4px solid white;"> ipsum </td>
+				<td style="padding: 10px 10px 45px 45px; font-size:20px;"> lipsum </td>
 			</tr>
 			</table>
 	</tr>
@@ -85,3 +91,13 @@ h2 {color: #cf4420;
 </table>
 </body>
 </html>
+
+<!-- TODO:
+* fix about us table spacing
+* add contact page
+* flipbook of images for front page
+* add accents to page, more details?
+* download menu
+* make logo bigger/centered?
+*beautify buttons/fix button inconsistencies?
+-->
