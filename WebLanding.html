@@ -18,15 +18,44 @@ h1 {color: #cf4420;
 th {
 	padding: 45px;
 	}
-btn { <!-- aspects for all button classes -->
+
+.button { <!-- aspects for all button classes -->
 	border: none;
 	background-color: inherit;
 	padding: 14px 28px;
 	font-size: 16px;
 	cursor: pointer;
-	display: inline-block; }
-.btn:hover {background: white;}
+	display: inline-block; 
+	}
 	
+.button:hover {
+	background-color: white;
+	}
+.home {
+	}
+.center { <!--center align -->
+	margin-left: auto;
+	margin-right: auto;
+	}
+.right {
+	margin-left: 70%;
+	margin-right: 0%;
+	}
+.left {
+	margin-left: 20%;
+	margin-right:70%;
+	}
+table#about {
+	width=100%;
+	margin-left: auto;
+	margin-right: auto;
+	}
+table#image {
+	width=100%;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
 </style>
 </head>
 
@@ -36,17 +65,17 @@ btn { <!-- aspects for all button classes -->
 		<tr> <!-- 1 row -->
 			<td style="text-align:left;">
 			<!-- logo image, left aligned -->
-			<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 5px 10px 5px 25px;"> </a>
+			<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 7px 10px 5px 25px;"> </a>
 			</td>
 			
 			<!-- other tabs to other sections, right aligned -->
 			<td style="text-align:right;">
 			<!-- home, menu, contact us -->
-				<table align="right">
+				<table class="right">
 					<tr> <!-- *make buttons -->
-						<td> <button class="btn home" style="color:orange; border:none; padding: 50px 20px 0px 15px;"> Home </button> </td>
-						<td> <a href="MenuPage.html"> <button class="btn menu"> Menu </button> </a> </td>
-						<td> <button class="btn contact"> Contact Us </button> </td>
+						<td> <button class="button home" style="color:orange; border:none; border-spacing: 50px 20px 0px 15px;"> Home </button> </td>
+						<td> <a href="MenuPage.html"> <button class="button menu" style="border:none;"> Menu </button> </a> </td>
+						<td> <button class="button contact" style="border:none; display:inline-block;"> Contact Us </button> </td>
 					</tr>
 				</table>
 			</td>
@@ -54,7 +83,7 @@ btn { <!-- aspects for all button classes -->
 	</table>			
 </header>
 
-<table style="width:80%; height:200px; align:center;" align="center"> <!-- tabled site, allow for cells -->
+<table style="width:80%; height:200px;" class="center" id="image"> <!-- tabled site, allow for cells -->
 	<tr> <!-- first block of site, pic of chicken and desc -->
 		<td style="background-image: url('Chickens_resized_1.jpg'); width:800px; height:600px; text-align:left;">
 			<h1 title="image, description"> Local Pasture-Raised Poultry </h1>
@@ -73,13 +102,13 @@ btn { <!-- aspects for all button classes -->
 		<td>
 			<h1> About Us </h1>
 			<!-- table -->
-			<table align="center">
+			<table class="center" id="about">
 			<tr style="font-size:25px; border: 2 px solid white; text-align:center;"> <!-- headers row-->
 				<th style="border-right: 4px solid white;"> Healthy </th>
 				<th style="border-right: 4px solid white;"> Affordable </th>
 				<th> IDEK </th> 
 			</tr>
-			<tr style="text-align:center; background-color:yellow;"> <!-- data rows -->
+			<tr style="text-align:center;"> <!-- data rows -->
 				<td style="padding:10px 10px 45px 45px; font-size:20px; border-right: 4px solid white; text-align:center;"> Lorem </td>
 				<td style="padding: 10px 10px 45px 45px; font-size:20px; border-right: 4px solid white;"> ipsum </td>
 				<td style="padding: 10px 10px 45px 45px; font-size:20px;"> lipsum </td>
@@ -97,7 +126,8 @@ btn { <!-- aspects for all button classes -->
 * add contact page
 * flipbook of images for front page
 * add accents to page, more details?
-* download menu
 * make logo bigger/centered?
 *beautify buttons/fix button inconsistencies?
+* underline current page
+*mobile pages
 -->
