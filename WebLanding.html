@@ -2,61 +2,70 @@
 <html lang="en-US">
 <html>
 <head>
-<title>FatDog Farmstead</title>
-<style>
-<!-- maroon: #630031, orange: #cf4420 -->
-body {
-	background-color: black;
-	}
-p {
-	font-size: 20px;
-	}
-h1 {color: #cf4420;
-	font-family: georgia;
-	font-size: 50px;
-	}
-th {
-	padding: 45px;
-	}
-
-.button { <!-- aspects for all button classes -->
-	border: none;
-	background-color: inherit;
-	padding: 14px 28px;
-	font-size: 16px;
-	cursor: pointer;
-	display: inline-block; 
-	}
+	<title>FatDog Farmstead</title>
+	<link rel="icon" type="image/x-icon" href="Logo(small).jpg">
+<!-- css needs /* to comment out, else next line is not read -->
+	<style>
+		/* <!-- maroon: #630031, orange: #cf4420 --> */
+		body {
+			background-color: black;
+		}
+		p {
+			font-size: 20px;
+		}
+		h1 {color: #cf4420;
+			font-family: georgia;
+			font-size: 50px;
+		}
+		th {
+		padding: 45px;
+		}
+		/*  <!-- aspects for all button classes --> */
+		.button {
+			border: none;
+			background-color: inherit;
+			padding: 14px 20px 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			display: inline-block; 
+			white-space: nowrap; /* <!-- puts text on one line, no split to next line --> */
+		}
 	
-.button:hover {
-	background-color: white;
-	}
-.home {
-	}
-.center { <!--center align -->
-	margin-left: auto;
-	margin-right: auto;
-	}
-.right {
-	margin-left: 70%;
-	margin-right: 0%;
-	}
-.left {
-	margin-left: 20%;
-	margin-right:70%;
-	}
-table#about {
-	width=100%;
-	margin-left: auto;
-	margin-right: auto;
-	}
-table#image {
-	width=100%;
-	margin-left: auto;
-	margin-right: auto;
-	}
-
-</style>
+		.button:hover {
+			background-color: white;
+		}
+	/* <!-- center align --> */
+		table.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		table.right {
+			margin-left: 70%;
+			margin-right: 0%;
+		}
+		.left {
+			margin-left: 20%;
+			margin-right:70%;
+		}
+		table#about {
+			width=100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		table#image {
+			width=100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.tint {
+			background-image:
+				linear-gradient( /* <!-- give tint to image to make text better readable --> */
+					rgba(255, 255, 255, .33),
+					rgba(255, 255, 255, .33)
+				),
+				url('Chickens_resized_1.jpg');
+		}
+	</style>
 </head>
 
 <body>
@@ -65,17 +74,17 @@ table#image {
 		<tr> <!-- 1 row -->
 			<td style="text-align:left;">
 			<!-- logo image, left aligned -->
-			<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 7px 10px 5px 25px;"> </a>
+			<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 7px 15px 5px 25px;"> </a>
 			</td>
 			
 			<!-- other tabs to other sections, right aligned -->
 			<td style="text-align:right;">
 			<!-- home, menu, contact us -->
-				<table class="right">
+				<table class="right" style="border-spacing: 10px 20px 20px 20px;">
 					<tr> <!-- *make buttons -->
-						<td> <button class="button home" style="color:orange; border:none; border-spacing: 50px 20px 0px 15px;"> Home </button> </td>
-						<td> <a href="MenuPage.html"> <button class="button menu" style="border:none;"> Menu </button> </a> </td>
-						<td> <button class="button contact" style="border:none; display:inline-block;"> Contact Us </button> </td>
+						<td> <button class="button home" style="color:orange;"> Home </button> </td>
+						<td> <a href="MenuPage.html"> <button class="button menu"> Menu </button> </a> </td>
+						<td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td>
 					</tr>
 				</table>
 			</td>
@@ -83,9 +92,9 @@ table#image {
 	</table>			
 </header>
 
-<table style="width:80%; height:200px;" class="center" id="image"> <!-- tabled site, allow for cells -->
+<table style="width:80%; height:200px; background-color: #1b1c1c;" class="center" id="image"> <!-- tabled site, allow for cells -->
 	<tr> <!-- first block of site, pic of chicken and desc -->
-		<td style="background-image: url('Chickens_resized_1.jpg'); width:800px; height:600px; text-align:left;">
+		<td class="tint" style="width:800px; height:600px; text-align:left;">
 			<h1 title="image, description"> Local Pasture-Raised Poultry </h1>
 			<p>No Hormones, no antibiotics, no steroids, no pharmaceticals</p>
 			<!-- button for to menu -->
@@ -93,29 +102,41 @@ table#image {
 	</tr>
 	<tr> <!-- second block, farm fresh, button?  **scrolling picture album? -->
 		<td style="text-align:right; width:800px; height:450px;"> 
+			<img src="img_3236.jpg" style="width:600px; height:400px; float:left;">
+			<!-- padding for text - more into page, centered? -->
 			<h1 style="font-size:40px;"> Farm fresh chicken and eggs </h1>
 			<p> Eggs by the dozen, chicken by the pound </p>
-			<input="button" onClick="menu()"
+			<input="button" onClick="menu()">
 		</td>
 	</tr>
-	<tr style="text-align:center; background-color:#630031;"> <!-- third block, about us -->
+	<tr style="text-align:center;"> <!-- third block, about us -->
 		<td>
 			<h1> About Us </h1>
 			<!-- table -->
-			<table class="center" id="about">
-			<tr style="font-size:25px; border: 2 px solid white; text-align:center;"> <!-- headers row-->
-				<th style="border-right: 4px solid white;"> Healthy </th>
-				<th style="border-right: 4px solid white;"> Affordable </th>
-				<th> IDEK </th> 
-			</tr>
-			<tr style="text-align:center;"> <!-- data rows -->
-				<td style="padding:10px 10px 45px 45px; font-size:20px; border-right: 4px solid white; text-align:center;"> Lorem </td>
-				<td style="padding: 10px 10px 45px 45px; font-size:20px; border-right: 4px solid white;"> ipsum </td>
-				<td style="padding: 10px 10px 45px 45px; font-size:20px;"> lipsum </td>
-			</tr>
+			<table class="center" style="margin-left:auto; margin-right:auto; border-spacing: 0px 0px 20px 0px;">
+				<tr style="font-size:25px; border: 2 px solid white; text-align:center;"> <!-- headers row-->
+					<th style="border-right: 4px solid white;"> Healthy </th>
+					<th style="border-right: 4px solid white;"> Affordable </th>
+					<th> IDEK </th> 
+				</tr>
+				<tr style="text-align:center;"> <!-- data rows -->
+					<td style="padding:10px 10px 45px 45px; font-size:20px; border-right: 4px solid white; text-align:center;"> Lorem </td>
+					<td style="padding: 10px 10px 45px 45px; font-size:20px; border-right: 4px solid white;"> ipsum </td>
+					<td style="padding: 10px 10px 45px 45px; font-size:20px;"> lipsum </td>
+				</tr>
 			</table>
+		</td>
 	</tr>
-<!-- footer -->
+	<!-- footer -->
+	<tr>
+		<td> 
+			<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
+				<tr style="text-align:center; margin-left:50%;">
+					<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 
 </table>
 </body>
@@ -127,7 +148,7 @@ table#image {
 * flipbook of images for front page
 * add accents to page, more details?
 * make logo bigger/centered?
-*beautify buttons/fix button inconsistencies?
 * underline current page
-*mobile pages
+* mobile pages
+* privacy?
 -->

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html lang='en-US'>
+<head>
+	<title>FatDog Farmstead Menu</title>
+	<link rel="icon" type="image/x-icon" href="Logo(small).jpg">
+	<style>
+	/* <!-- maroon: #630031, orange: #cf4420 --> */
+		body {
+			background-color: black;
+		}
+		h1 {
+			text-align:center; 
+			color:#cf4420; 
+			font-size: 40px; 
+			font-family:Georgia;
+		}
+		.button {
+			border: none;
+			background-color: inherit;
+			padding: 14px 20px 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			display: inline-block;
+			white-space: nowrap;
+		}
+		.button:hover {
+			background-color: white;
+		}
+		.dl {
+			border: none;
+			background-color: #630031;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.right {
+			margin-left:70%;
+			margin-right: 0%;
+		}
+
+	</style>
+</head>
+
+<body>
+	<header style="background-color:#630031;"> <!-- top of page -->
+	<table style="width:100%;">
+		<tr> <!-- 1 row -->
+			<td style="text-align:left;">
+			<!-- logo image, left aligned -->
+			<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 7px 15px 5px 25px;"> </a>
+			</td>
+			
+			<!-- other tabs to other sections, right aligned -->
+			<td style="text-align:right;">
+			<!-- home, menu, contact us -->
+				<table class="right">
+					<tr> <!-- *make buttons -->
+						<td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td>
+						<td> <a href="MenuPage.html"> <button class="button menu" style="color:orange;"> Menu </button> </a> </td>
+						<td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>			
+</header>
+
+<!-- actual page data -->
+	<table style="width:100%; height:100%; border-spacing:25px; background-color: #1b1c1c;" class="center">
+		<tr>
+			<td> <h1> <b>Products/Price List</b> </h1> </td>
+		</tr>
+		<tr> <!-- menu -->
+			 <td>  <!-- td necessary to have table in table -->
+			 <table class="center" style="width:70%; height:350px; font-size:18px;">
+				<tr>
+					<td>Whole Chicken</td>
+					<td>$5/lb</td>
+					<td>Chicken Leg Quarters</td>
+					<td>$7/lb</td>
+				</tr>
+				<tr>
+					<td>Chicken Breast</td>
+					<td>$13/lb</td>
+					<td>Chicken Backs</td>
+					<td>$7/lb</td>
+				</tr>
+				<tr>
+					<td>Chicken Tenderloin</td>
+					<td>$13/lb</td>
+					<td>Chicken Feet</td>
+					<td>$4/lb</td>
+				</tr>
+				<tr>
+					<td>Eggs</td>
+					<td>$4/dozen</td>
+					<td>Organ Meat</td>
+					<td>$5/lb</td>
+				</tr>
+				<tr class="center">
+					<td> Seasonal Vegetables* </td>
+					<td> $$/lb </td>
+				</tr>
+			</table> 
+			</td> <!--end menu-->
+		</tr>
+		<tr>
+			<td> <h1 style="text-align:center"> Downloadable Menu </h1> </td>
+		</tr> <!--linked file -->
+		<tr> <!-- use text-align for things in data -->
+			<td style="text-align:center"> <a href="Menu.jpg" download="Menu.jpg"> <button class="button dl"> <i> Download Here </i> </button> </a> </td>
+		</tr>
+		<!-- footer -->
+		<tr>
+			<td> 
+				<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
+					<tr style="text-align:center; margin-left:50%;">
+						<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
+<script>
+	function home() {
+		window.location.hred = "WebLanding.html";
+	}
+</script>
+</html>
+
+<!-- TODO
+* underlines
+
+-->
