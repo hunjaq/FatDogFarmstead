@@ -60,24 +60,52 @@
 				),
 				url('Chickens_resized_1.jpg');
 		}
+		#img { /* <!-- scrolling effect transition? --> */
+			animation: fade 5s infinite;
+		}
 	</style>
 	
 	<script>
-		var images = ["img_3236.jpg", "Maisie+chickens.jpg", "whitebirds1.jpg"];
+		var images = ["img_3236.jpg", "chicks1.jpg", "chicks2.jpg"];
 		var i = 0;
-		function changeImage() {
+		function nextImage() {
+			var image = document.getElementById("img");
+			//iterate index
 			if (i === images.length-1) {
 				i = 0;
 			}
 			else {
 				i++;
 			}
-			
-			document.getElementById("img").src = images[i];
-			//window.alert(i);
+			//fade to black, 0 = black
+			for (let num = 1; num > -.1; num-=.1) {
+				image.style.opacity = "" + num;
+				delay(10);
+				//window.alert(num);
+				//document.getElementById("img").style.opacity = "0";
+			}
+			//change image
+			image.src = images[i];
+			//unfade
+			for (let num = 0; num < 1.1; num+=.1) {
+				image.style.opacity = "" + num;
+			}
 		}
 		function startTimer() {
-			setInterval(changeImage, 30000);
+			setInterval(nextImage, 5000);
+		}
+		var op = 1;
+		function transition() {
+			
+		}
+		function prevImage() {
+			if (i === 0) {
+				i = images.length-1;
+			}
+			else {
+				i--;
+			}
+			document.getElementById("img").src = images[i];
 		}
 	</script>
 </head>
@@ -117,8 +145,8 @@
 		</td>
 	</tr>
 	<tr> <!-- second block, farm fresh, button?  **scrolling picture album? -->
-		<td style="text-align:right; padding:15px;"> 
-			<img id="img" src="img_3236.jpg" style="width:600px; height:400px; float:left;">
+		<td style="text-align:right; padding:30px;"> 
+			<img id="img" src="img_3236.jpg" style="width:800px; height:600px; float:left;"> <!-- most widescreen images 4/3 ratio -->
 			<!-- padding for text - more into page, centered? -->
 			<h1 style="font-size:40px;"> Farm Fresh Chicken and Eggs </h1>
 			<p> Eggs by the dozen </p>
@@ -158,10 +186,8 @@
 </html>
 
 <!-- TODO:
-* flipbook of images for front page
 * add accents to page, more details?
 * make logo bigger/centered?
-* underline current page
 * mobile pages
 * privacy?
 *chicken cross road animation across top banner?
