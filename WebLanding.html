@@ -4,11 +4,12 @@
 <head>
 	<title>FatDog Farmstead</title>
 	<link rel="icon" type="image/x-icon" href="Logo(small).jpg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- make sizes change based on display size*** -->
 <!-- css needs /* to comment out, else next line is not read -->
 	<style>
 		/* <!-- maroon: #630031, orange: #cf4420 --> */
 		body {
-			background-color: black;
+			background-color: #1c1c1c;
 		}
 		p {
 			font-size: 20px;
@@ -59,6 +60,7 @@
 					rgba(255, 255, 255, .33)
 				),
 				url('Chickens_resized_1.jpg');
+				size:
 		}
 		#img { /* <!-- scrolling effect transition? --> */
 			animation: fade 5s infinite;
@@ -77,17 +79,17 @@
 			else {
 				i++;
 			}
-			//fade to black, 0 = black
-			for (let num = 1; num > -.1; num-=.1) {
+			//fade to black, 0 = black, 1 = full
+			for (let num = 1; num > -0.1; num -= 0.1) {
 				image.style.opacity = "" + num;
-				delay(10);
+				//delay(10);
 				//window.alert(num);
 				//document.getElementById("img").style.opacity = "0";
 			}
 			//change image
 			image.src = images[i];
 			//unfade
-			for (let num = 0; num < 1.1; num+=.1) {
+			for (let num = 0; num < 1.1; num += 0.1) {
 				image.style.opacity = "" + num;
 			}
 		}
@@ -136,17 +138,17 @@
 	</table>			
 </header>
 
-<table style="width:100%; height:100%; background-color: #1b1c1c;" class="center" id="image"> <!-- tabled site, allow for cells -->
+<table style="max-width:1236px; height:100%; background-color: #1b1c1c;" class="center" id="image"> <!-- tabled site, allow for cells -->
 	<tr> <!-- first block of site, pic of chicken and desc -->
-		<td class="tint" style="height:600px; text-align:left; padding: 0% 0% 0% 10%;">
+		<td class="tint" style="height:600px; text-align:left; padding: 0% 0% 5% 10%;">
 			<!-- tint class gives image -->
 			<h1 title="image, description"> Local Pasture-Raised Poultry </h1>
 			<p> No Hormones, No Antibiotics, No Steroids, No Pharmaceuticals </p>
 		</td>
 	</tr>
-	<tr> <!-- second block, farm fresh, button?  **scrolling picture album? -->
+	<tr style="background-color:#0b0c0c; padding: 20px 0px 0px 0px;"> <!-- second block, farm fresh -->
 		<td style="text-align:right; padding:30px;"> 
-			<img id="img" src="img_3236.jpg" style="width:800px; height:600px; float:left;"> <!-- most widescreen images 4/3 ratio -->
+			<img id="img" src="img_3236.jpg" style="width:400px; height:300px; float:left; padding: 0px 0px 0px 40px;"> <!-- most widescreen images 4/3 ratio -->
 			<!-- padding for text - more into page, centered? -->
 			<h1 style="font-size:40px;"> Farm Fresh Chicken and Eggs </h1>
 			<p> Eggs by the dozen </p>
@@ -191,4 +193,6 @@
 * mobile pages
 * privacy?
 *chicken cross road animation across top banner?
+* account for different screen sizes*
+	- use ... and create menu when too small (should account for mobile?)
 -->
