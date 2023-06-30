@@ -41,13 +41,65 @@
 			margin-left:59%;
 			margin-right: 0%;
 		}
+		.expand {
+			display: none;
+			margin-left: 50vw;
+		}
+		#dropdown {
+			display: none;
+			background-color: #630031;
+		}
+		#x {
+			display: none;
+			margin-left: 50vw;
+		}
+		
 		@media screen and (max-width:1200px) {
 			.right {
 				margin-left: 40vw;
 			}
 		}
+		
+		@media screen and (max-width:600px) {
+			.right {
+				display: none;
+			}
+			.expand {
+				display: table-row;
+			}
+		}
+		
+		@media screen and (min-width:1000px) {
+			.right { 
+				display: table-row; 
+				margin-right: 0vw;
+				float: right;
+			}
+			.expand {
+				display: none;
+			}
+			#dropdown {
+				display: none;
+			}
+		}
 
 	</style>
+	
+	<script>
+		function dropdown() {
+			document.getElementById("...").style.display = "none";
+			//show other buttons in separate table to right?
+			document.getElementById("data").style.display = "flex";
+			document.getElementById("dropdown").style.display = "flex";
+			document.getElementById("x").style.display = "block";
+		}
+		function collapse() {
+			document.getElementById("x").style.display = "none";
+			document.getElementById("...").style.display = "block";
+			document.getElementById("dropdown").style.display = "none";
+			document.getElementById("data").style.display = "block";
+		}
+	</script>
 </head>
 
 <body>
@@ -65,19 +117,32 @@
 				<table class="right">
 					<tr> <!-- *make buttons -->
 						<td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td>
-						<td> <a href="MenuPage.html"> <button class="button menu" style="color:orange;"> <u> Menu </u> </button> </a> </td>
+						<td> <a href="MenuPage.html"> <button class="button menu" style="color:#aa4420;"> <u> Menu </u> </button> </a> </td>
 						<td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td>
 						<td> <a href="StoryPage.html"> <button class="button story"> Our Story </button> </a> </td>
 						<td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td>
 					</tr>
+				</table>
+				<table class="expand"> <!-- dropdown button that shows only when small window -->
+					<tr> <td> <button class="button expand" id="..." onclick="dropdown()"> ... </button> </td> </tr>
+					<tr> <td> <button class="button collapse" id="x" onclick="collapse()"> X </button> </td> </tr>
 				</table>
 			</td>
 		</tr>
 	</table>			
 </header>
 
+<!-- dropdown on right, hidden until used -->
+	<table id="dropdown" style="float: right;">
+		<tr> <td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td> </tr>
+		<tr> <td> <a href="MenuPage.html"> <button class="button menu" style="color:#aa4420;"> <u> Menu </u> </button> </a> </td> </tr>
+		<tr> <td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td> </tr>
+		<tr> <td> <a href="StoryPage.html"> <button class="button story"> Our Story </button> </a> </td> </tr>
+		<tr> <td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td> </tr>
+	</table>
+
 <!-- actual page data -->
-	<table style="width:100%; height:100%; border-spacing:25px; background-color: #1b1c1c;" class="center">
+	<table style="width:100%; height:100%; border-spacing:25px; background-color: #1b1c1c;" class="center" id="data">
 		<tr>
 			<td> <h1> <b>Products/Price List</b> </h1> </td>
 		</tr>
@@ -147,5 +212,6 @@
 
 <!-- TODO
 * underlines
-
+* fix table spacing
+* fix button margins depending on window size*
 -->
