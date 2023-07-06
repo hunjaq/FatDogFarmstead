@@ -65,9 +65,47 @@
 		#img { /* <!-- scrolling effect transition? --> */
 			animation: fade 5s infinite;
 		}
+		#dropdown {
+			display: none;
+			background-color: #630031;
+		}
+		#x {
+			display: none;
+			margin-left: 50vw;
+		}
+		
+				/* <!-- small size -- ... adjusts to right side --> */
+		@media screen and (max-width:800px) {
+			.right {
+				display: none;
+			}
+			.expand {
+				display: block;
+				float: right;
+			}
+		}
+		
+		/* <!-- maximum -- adjusts to right side of screen  --> */
+		@media screen and (min-width:801px) {
+			.right { 
+				display: table-row; 
+				margin-right: 0vw;
+				float: right;
+			}
+			.expand {
+				display: none;
+			}
+			#dropdown {
+				display: none;
+			}
+			#data {
+				width: 100%;
+			}
+		}
 	</style>
 	
 	<script>
+		//***image scrolling functions***
 		var images = ["img_3236.jpg", "chicks1.jpg", "chicks2.jpg"];
 		var i = 0;
 		function nextImage() {
@@ -109,6 +147,21 @@
 			}
 			document.getElementById("img").src = images[i];
 		}
+		
+		//***dropdowns for smaller screens***
+		function dropdown() {
+			document.getElementById("...").style.display = "none";
+			//show other buttons in separate table to right?
+			//document.getElementById("data").style.display = "flex";
+			document.getElementById("dropdown").style.display = "block";
+			document.getElementById("x").style.display = "block";
+		}
+		function collapse() { //collapse drop down menu
+			document.getElementById("x").style.display = "none";
+			document.getElementById("...").style.display = "block";
+			document.getElementById("dropdown").style.display = "none";
+			document.getElementById("data").style.display = "block";
+		}
 	</script>
 </head>
 
@@ -133,66 +186,79 @@
 						<td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td>
 					</tr>
 				</table>
+				<table class="expand" style="text-align: right;"> <!-- dropdown button that shows only when small window -->
+					<tr> <td> <button class="button expand" id="..." onclick="dropdown()"> ... </button> </td> </tr>
+					<tr> <td> <button class="button collapse" id="x" onclick="collapse()"> X </button> </td> </tr>
+				</table>
 			</td>
 		</tr>
 	</table>			
 </header>
 
-<table style="max-width:1236px; height:100%; background-color: #1b1c1c;" class="center" id="image"> <!-- tabled site, allow for cells -->
-	<tr> <!-- first block of site, pic of chicken and desc -->
-		<td class="tint" style="height:600px; text-align:left; padding: 0% 0% 5% 10%;">
-			<!-- tint class gives image -->
-			<h1 title="image, description"> Local Pasture-Raised Poultry </h1>
-			<p> No Hormones, No Antibiotics, No Steroids, No Pharmaceuticals </p>
-		</td>
-	</tr>
-	<tr style="background-color:#0b0c0c; padding: 20px 0px 0px 0px;"> <!-- second block, farm fresh -->
-		<td style="text-align:right; padding:30px;"> 
-			<img id="img" src="img_3236.jpg" style="width:400px; height:300px; float:left; padding: 0px 0px 0px 40px;"> <!-- most widescreen images 4/3 ratio -->
-			<!-- padding for text - more into page, centered? -->
-			<h1 style="font-size:40px;"> Farm Fresh Chicken and Eggs </h1>
-			<p> Eggs by the dozen </p>
-			<p> Chicken by the pound </p>
-		</td>
-	</tr>
-	<tr style="text-align:center;"> <!-- third block, about us -->
-		<td>
-			<h1> About Us </h1>
-			<!-- table -->
-			<table class="center" style="margin-left:auto; margin-right:auto; border-spacing: 0px 0px 20px 0px;">
-				<tr style="font-size:25px; border:2px solid white; text-align:center;"> <!-- first row -->
-					<th style="border-right: 4px solid white; font-size:30px;"> <i> Healthy </i> </th>
-					<td style="padding:10px 10px 45px 45px; font-size:20px; border-right: 4px solid white; text-align:center;"> Our chickens are have a steady and exclusive diet of bugs, grass,
-					 and sunshine suppemented by non-GMO feed from Sunrise Farm in Stuarts Draft, VA. Our garden produces non-GMO pesticide-free seasonal vegetables year-round. </td>
-				</tr>
-				<tr style="text-align:center;"> <!-- second row -->
-					<th style="border-right: 4px solid white; font-size:30px;">  <i> Affordable </i> </th>
-					<td style="padding: 10px 10px 45px 45px; font-size:20px; border-right: 4px solid white;"> We strive to keep prices affordable while providing the healthiest product. </td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<!-- footer -->
-	<tr>
-		<td> 
-			<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
-				<tr style="text-align:center; margin-left:50%;">
-					<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
-				</tr>
-			</table>
-		</td>
-	</tr>
+<!-- dropdown on right, hidden until used -->
+	<table id="dropdown" style="float: right;">
+		<tr> <td> <a href="WebLanding.html"> <button class="button home" style="color:#aa4420;"> <u> Home </u> </button> </a> </td> </tr>
+		<tr> <td> <a href="MenuPage.html"> <button class="button menu"> Menu </button> </a> </td> </tr>
+		<tr> <td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td> </tr>
+		<tr> <td> <a href="StoryPage.html"> <button class="button story"> Our Story </button> </a> </td> </tr>
+		<tr> <td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td> </tr>
+	</table>
 
-</table>
+<!-- site data -->
+	<table style="max-width:1236px; height:100%; background-color: #1b1c1c;" class="center" id="image"> <!-- tabled site, allow for cells -->
+		<tr> <!-- first block of site, pic of chicken and desc -->
+			<td class="tint" style="height:600px; text-align:left; padding: 0% 0% 5% 10%;">
+				<!-- tint class gives image -->
+				<h1 title="image, description"> Local Pasture-Raised Poultry </h1>
+				<p> No Hormones, No Antibiotics, No Steroids, No Pharmaceuticals </p>
+			</td>
+		</tr>
+		<tr style="background-color:#0b0c0c; padding: 20px 0px 0px 0px;"> <!-- second block, farm fresh -->
+			<td style="text-align:right; padding:30px;"> 
+				<img id="img" src="img_3236.jpg" style="width:400px; height:300px; float:left; padding: 0px 0px 0px 40px;"> <!-- most widescreen images 4/3 ratio -->
+				<!-- padding for text - more into page, centered? -->
+				<h1 style="font-size:40px;"> Farm Fresh Chicken and Eggs </h1>
+				<p> Eggs by the dozen </p>
+				<p> Chicken by the pound </p>
+			</td>
+		</tr>
+		<tr style="text-align:center;"> <!-- third block, about us -->
+			<td>
+				<h1> About Us </h1>
+				<!-- table -->
+				<table class="center" style="margin-left:auto; margin-right:auto; border-spacing: 0px 0px 20px 0px;">
+					<tr style="font-size:25px; border:2px solid white; text-align:center;"> <!-- first row -->
+						<th style="border-right: 4px solid white; font-size:30px;"> <i> Healthy </i> </th>
+						<td style="padding:10px 10px 45px 45px; font-size:20px; border-right: 4px solid white; text-align:center;"> Our chickens are have a steady and exclusive diet of bugs, grass,
+					 and sunshine suppemented by non-GMO feed from Sunrise Farm in Stuarts Draft, VA. Our garden produces non-GMO pesticide-free seasonal vegetables year-round. </td>
+					</tr>
+					<tr style="text-align:center;"> <!-- second row -->
+						<th style="border-right: 4px solid white; font-size:30px;">  <i> Affordable </i> </th>
+						<td style="padding: 10px 10px 45px 45px; font-size:20px; border-right: 4px solid white;"> We strive to keep prices affordable while providing the healthiest product. </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!-- footer -->
+		<tr>
+			<td> 
+				<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
+					<tr style="text-align:center; margin-left:50%;">
+						<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
 </body>
 </html>
 
 <!-- TODO:
 * add accents to page, more details?
-* make logo bigger/centered?
-* mobile pages
 * privacy?
 *chicken cross road animation across top banner?
 * account for different screen sizes*
 	- use ... and create menu when too small (should account for mobile?)
+* edge case, drop down open when expanding window
 -->

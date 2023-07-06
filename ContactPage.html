@@ -51,7 +51,7 @@
 		}
 		img {
 			display: block;
-			margin-right; 10%;
+			margin-right: 10%;
 		}
 		h2 {
 			font-size: 30px;
@@ -68,9 +68,77 @@
 			display-inline-block;
 			background-color: #cf4420;
 		}
+		#dropdown {
+			display: none;
+			background-color: #630031;
+		}
+		#x {
+			display: none;
+			margin-left: 50vw;
+		}
+		#parent {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		#blurb {
+			order: 0;
+			flex-grow: 1
+			
+		}
+		#flipbook {
+			order: 1;
+			flex-grow: 1;
+		}
+		
+		/* <!-- small size -- ... adjusts to right side --> */
+		@media screen and (max-width:800px) {
+			.right {
+				display: none;
+			}
+			.expand {
+				display: block;
+				float: right;
+			}
+			
+			/* <!-- adjust image below, text to top and centered --> */
+			#flipbook {
+				display: table-row;
+			}
+			#blurb {
+				display: table-row;
+			}
+			h2 {
+				text-align: center;
+			}
+			p {
+				text-align: center;
+			}
+		}
+		
+		/* <!-- maximum -- adjusts to right side of screen  --> */
+		@media screen and (min-width:801px) {
+			.right { 
+				display: table-row; 
+				margin-right: 0vw;
+				float: right;
+			}
+			.expand {
+				display: none;
+			}
+			#dropdown {
+				display: none;
+			}
+			
+			#blurb {
+
+			}
+
+		}
 	</style>
 	
 	<script>
+		//images scrolling functions
 		var images = ["img_2233.jpg", "chicks3.jpg"];
 		var num = 0;
 		function nextImage() {
@@ -90,6 +158,21 @@
 				num--;
 			}
 			document.getElementById("img").src = images[num];
+		}
+		
+		//***dropdowns for smaller screens***
+		function dropdown() {
+			document.getElementById("...").style.display = "none";
+			//show other buttons in separate table to right?
+			//document.getElementById("data").style.display = "flex";
+			document.getElementById("dropdown").style.display = "block";
+			document.getElementById("x").style.display = "block";
+		}
+		function collapse() { //collapse drop down menu
+			document.getElementById("x").style.display = "none";
+			document.getElementById("...").style.display = "block";
+			document.getElementById("dropdown").style.display = "none";
+			document.getElementById("data").style.display = "block";
 		}
 	</script>
 </head>
@@ -115,30 +198,34 @@
 							<td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td>
 						</tr>
 					</table>
+					<table class="expand" style="text-align: right;"> <!-- dropdown button that shows only when small window -->
+						<tr> <td> <button class="button expand" id="..." onclick="dropdown()"> ... </button> </td> </tr>
+						<tr> <td> <button class="button collapse" id="x" onclick="collapse()"> X </button> </td> </tr>
+					</table>
 				</td>
 			</tr>
 		</table>			
 	</header>
 	
+	<!-- dropdown on right, hidden until used -->
+	<table id="dropdown" style="float: right;">
+		<tr> <td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td> </tr>
+		<tr> <td> <a href="MenuPage.html"> <button class="button menu"> Menu </button> </a> </td> </tr>
+		<tr> <td> <a href="ContactPage.html"> <button class="button contact" style="color:#aa4420;"> <u> Contact Us </u> </button> </a> </td> </tr>
+		<tr> <td> <a href="StoryPage.html"> <button class="button story"> Our Story </button> </a> </td> </tr>
+		<tr> <td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td> </tr>
+	</table>
 	
-	<table style="width:100%; background-color:#1b1c1c;" class="center">
-		<tr>
-			<td>
+	<!-- page data -->
+	<table style="width:100%; background-color:#1b1c1c;" id="parent">
+		<tr style="text-align: center;">
+			<td colspan="2">
 				<h1> Contact Us </h1>
 			</td>
 		</tr>
 		<tr>
-			<td style="padding: 0px 10% 0px 0px;">
-				<table style="float:right"> <!-- image, right side -->
-					<tr>
-						<td> <img src="img_2233.jpg" style="float:right; width:400px; height:525px;" id="img"> <!-- image --> </td>
-					</tr>
-					<tr style="text-align:center;">
-						<td> <button id="prev" onclick="prevImage()" class="scroll"> Previous </button> 
-						<button id="next" onclick="nextImage()" class="scroll"> Next </button> </td>
-					</tr>
-				</table>
-				<table class="right" style="margin-left: 10%; margin-right: 60%;"> <!-- text, left side -->
+			<td id="blurb" style="width:50%; padding: 0px 0px 0px 10%;">
+				<table style="" > <!-- text, left side -->
 					<tr>
 						<td style="padding: 20px 0px 0px 0px;">
 							<h2> Ask questions or just say hello! </h2>
@@ -151,15 +238,26 @@
 							<p> Located in Barboursville, Virginia </p>	
 						</td>
 					</tr>
-					<tr style="text-align:right"> <td> Dan: (434) 960-7435 </td> </tr> <!-- make link as well? -->
-					<tr style="text-align:right"> <td> Traci: (434) 960-7465 </td> </tr>
-					<tr style="text-align:right"> <td> <a href="mailto:DTPownall@fatdogfarmstead.com"> DTPownall@fatdogfarmstead.com </a>  </td> </tr>
+					<tr> <td style="padding: 0px;">  <p> Dan: (434) 960-7435 </p> </td> </tr> <!-- make link as well? -->
+					<tr> <td style="padding: 0px;"> <p> Traci: (434) 960-7465 </p> </td> </tr>
+					<tr> <td style="padding: 0px;"> <p> <a href="mailto:DTPownall@fatdogfarmstead.com"> DTPownall@fatdogfarmstead.com </a> </p> </td> </tr>
+				</table>
+			</td>
+			<td style="padding: 0px 10% 0px 0px; width: 50%;" id="flipbook">
+				<table style="float:right"> <!-- image, right side -->
+					<tr>
+						<td> <img src="img_2233.jpg" style="float:right; width:400px; height:525px;" id="img"> <!-- image --> </td>
+					</tr>
+					<tr style="text-align:center;">
+						<td> <button id="prev" onclick="prevImage()" class="scroll"> Prev </button> 
+						<button id="next" onclick="nextImage()" class="scroll"> Next </button> </td>
+					</tr>
 				</table>
 			</td>
 		</tr>
 		
 		<tr> <!-- footer -->
-			<td style="padding:20px 0px 0px 0px;"> 
+			<td style="padding:20px 0px 0px 0px;" colspan="2"> 
 				<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
 					<tr style="text-align:center; margin-left:50%;">
 						<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
@@ -171,8 +269,9 @@
 </body>
 </html>
 
-<!--
-- make into one table?
-- make img float to right of entire entity
-- buttons aligned?
+<!-- TODO
+ * centered text not padded right?
+ * page spacing wrong when too big
+-->
+
 	

@@ -43,7 +43,8 @@
 		}
 		.expand {
 			display: none;
-			margin-left: 50vw;
+			
+			
 		}
 		#dropdown {
 			display: none;
@@ -54,22 +55,21 @@
 			margin-left: 50vw;
 		}
 		
-		@media screen and (max-width:1200px) {
-			.right {
-				margin-left: 40vw;
-			}
-		}
+
 		
-		@media screen and (max-width:600px) {
+		/* <!-- small size -- ... adjusts to right side --> */
+		@media screen and (max-width:800px) {
 			.right {
 				display: none;
 			}
 			.expand {
-				display: table-row;
+				display: block;
+				float: right;
 			}
 		}
 		
-		@media screen and (min-width:1000px) {
+		/* <!-- maximum -- adjusts to right side of screen  --> */
+		@media screen and (min-width:801px) {
 			.right { 
 				display: table-row; 
 				margin-right: 0vw;
@@ -81,6 +81,9 @@
 			#dropdown {
 				display: none;
 			}
+			#data {
+				width: 100%;
+			}
 		}
 
 	</style>
@@ -89,11 +92,11 @@
 		function dropdown() {
 			document.getElementById("...").style.display = "none";
 			//show other buttons in separate table to right?
-			document.getElementById("data").style.display = "flex";
-			document.getElementById("dropdown").style.display = "flex";
+			//document.getElementById("data").style.display = "flex";
+			document.getElementById("dropdown").style.display = "block";
 			document.getElementById("x").style.display = "block";
 		}
-		function collapse() {
+		function collapse() { //collapse drop down menu
 			document.getElementById("x").style.display = "none";
 			document.getElementById("...").style.display = "block";
 			document.getElementById("dropdown").style.display = "none";
@@ -114,7 +117,7 @@
 			<!-- other tabs to other sections, right aligned -->
 			<td style="text-align:right;">
 			<!-- home, menu, contact us -->
-				<table class="right">
+				<table class="right" style="text-align: right;">
 					<tr> <!-- *make buttons -->
 						<td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td>
 						<td> <a href="MenuPage.html"> <button class="button menu" style="color:#aa4420;"> <u> Menu </u> </button> </a> </td>
@@ -123,7 +126,7 @@
 						<td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td>
 					</tr>
 				</table>
-				<table class="expand"> <!-- dropdown button that shows only when small window -->
+				<table class="expand" style="text-align: right;"> <!-- dropdown button that shows only when small window -->
 					<tr> <td> <button class="button expand" id="..." onclick="dropdown()"> ... </button> </td> </tr>
 					<tr> <td> <button class="button collapse" id="x" onclick="collapse()"> X </button> </td> </tr>
 				</table>
@@ -148,7 +151,7 @@
 		</tr>
 		<tr> <!-- menu -->
 			 <td>  <!-- td necessary to have table in table -->
-			 <table class="center" style="width:70%; height:350px; font-size:20px;">
+			 <table class="center" style="width:70%; height:350px; font-size:20px; colspan: 10%;">
 				<tr>
 					<td>Whole Chicken</td>
 					<td>$5/lb</td>
@@ -179,9 +182,10 @@
 					
 				</tr>
 				<tr>
-					<td> <sub> *Vegetables available and amounts vary by season </sub> </td>
+					<td></td>
 				</tr>
 			</table> 
+			<p style="text-align: center;">  <sub> *Vegetables available and amounts vary by season </sub> </p>
 			</td> <!--end menu-->
 		</tr>
 		<tr>
@@ -202,16 +206,8 @@
 		</tr>
 	</table>
 </body>
-
-<script>
-	function home() {
-		window.location.hred = "WebLanding.html";
-	}
-</script>
 </html>
 
 <!-- TODO
-* underlines
-* fix table spacing
-* fix button margins depending on window size*
+ * make actual download, not link to other page?
 -->
