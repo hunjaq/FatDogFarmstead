@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang='en-US'>
+<head>
+	<title>FatDog Farmstead Menu</title>
+	<link rel="icon" type="image/x-icon" href="Logo(small).jpg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	/* <!-- maroon: #630031, orange: #cf4420 --> */
+		body {
+			background-color: black;
+		}
+		h1 {
+			text-align:center; 
+			color:#cf4420; 
+			font-size: 40px; 
+			font-family:Georgia;
+		}
+		.button {
+			border: none;
+			background-color: inherit;
+			padding: 14px 20px 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			display: inline-block;
+			white-space: nowrap;
+		}
+		.button:hover {
+			background-color: white;
+		}
+		.dl {
+			border: none;
+			background-color: #630031;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.right {
+			margin-left:59%;
+			margin-right: 0%;
+		}
+		.order {
+			border: none;
+			background-color: #630031;
+			padding: 20px 30px 20px 30px;
+			font-size: 20px;
+			cursor:pointer;
+		}
+		
+		#dropdown {
+			display: none;
+			background-color: #630031;
+		}
+		#x {
+			display: none;
+			margin-left: 50vw;
+		}
+
+		
+		/* <!-- small size -- ... adjusts to right side --> */
+		@media screen and (max-width:800px) {
+			.right {
+				display: none;
+			}
+			.expand {
+				display: block;
+				float: right;
+			}
+		}
+		
+		/* <!-- maximum -- adjusts to right side of screen  --> */
+		@media screen and (min-width:801px) {
+			.right { 
+				display: table-row; 
+				margin-right: 0vw;
+				float: right;
+			}
+			.expand {
+				display: none;
+			}
+			#dropdown {
+				display: none;
+			}
+			#data {
+				width: 100%;
+			}
+		}
+
+	</style>
+	
+	<script>
+	//*** order stuff **
+		function setUp() {
+			var form = document.getElementById("form");
+			form.style.display = "none";
+			hideFuture();
+		}
+		function showForm() {
+			var form = document.getElementById("form");
+			var r1 = document.getElementById("r1");	
+			var r2 = document.getElementById("r2");
+			form.style.display = "table-row"; //has to be table-row to format right
+			r1.style.display = "none";
+			r2.style.display = "none";
+			
+		}
+		function hideFuture() {
+			var form = document.getElementById("form");
+			var r1 = document.getElementById("r1");	
+			var r2 = document.getElementById("r2");
+			form.style.display = "none";
+			r1.style.display = "none";
+			r2.style.display = "none";
+		}
+		
+	//***dropdowns for smaller screens***
+		function dropdown() {
+			document.getElementById("...").style.display = "none";
+			//show other buttons in separate table to right?
+			//document.getElementById("data").style.display = "flex";
+			document.getElementById("dropdown").style.display = "block";
+			document.getElementById("x").style.display = "block";
+		}
+		function collapse() { //collapse drop down menu
+			document.getElementById("x").style.display = "none";
+			document.getElementById("...").style.display = "block";
+			document.getElementById("dropdown").style.display = "none";
+			document.getElementById("data").style.display = "block";
+		}
+	</script>
+</head>
+
+<body onload="setUp()">
+	<header style="background-color:#630031;"> <!-- top of page -->
+	<table style="width:100%;">
+		<tr> <!-- 1 row -->
+			<td style="text-align:left;">
+			<!-- logo image, left aligned -->
+			<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 7px 15px 5px 25px;"> </a>
+			</td>
+			
+			<!-- other tabs to other sections, right aligned -->
+			<td style="text-align:right;">
+			<!-- home, menu, contact us -->
+				<table class="right">
+					<tr> <!-- *make buttons -->
+						<td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td>
+						<td> <a href="MenuPage.html"> <button class="button menu"> Menu </button> </a> </td>
+						<td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td>
+						<td> <a href="StoryPage.html"> <button class="button story"> Our Story </button> </a> </td>
+						<td> <a href="OrderPage.html"> <button class="button orders" style="color:orange;"> <u> Order </u> </button> </a> </td>
+					</tr>
+				</table>
+				<table class="expand" style="text-align: right;"> <!-- dropdown button that shows only when small window -->
+						<tr> <td> <button class="button expand" id="..." onclick="dropdown()"> ... </button> </td> </tr>
+						<tr> <td> <button class="button collapse" id="x" onclick="collapse()"> X </button> </td> </tr>
+				</table>
+			</td>
+		</tr>
+	</table>			
+	</header>
+	
+	<!-- dropdown on right, hidden until used -->
+	<table id="dropdown" style="float: right;">
+		<tr> <td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td> </tr>
+		<tr> <td> <a href="MenuPage.html"> <button class="button menu"> Menu </button> </a> </td> </tr>
+		<tr> <td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td> </tr>
+		<tr> <td> <a href="StoryPage.html"> <button class="button story"> Our Story </button> </a> </td> </tr>
+		<tr> <td> <a href="OrderPage.html"> <button class="button orders" style="color:#aa4420;"> <u> Order </u> </button> </a> </td> </tr>
+	</table>
+	
+	<!-- actual page data -->
+	<table style="width:100%; background-color:#1b1c1c;" class="center">
+		<tr style="text-align:center">
+			<td> <h1> Order Online </h1> </td>
+		</tr>
+		<tr style="text-align:center" id="placeholder">
+			<td> <p style="font-size:20px;"> Online ordering coming soon! For now, check the linked inventory to check what's available and email to place an order. </p> </td>
+		</tr>
+		<tr style="text-align:center;" id="r1"> <!-- online ordering -->
+			<td> <p style="font-size:20px;"> Want to place an order? Click the button below! </p>
+			<p> * Inventory subject to change </p> </td>
+		</tr>
+		<tr style="text-align:center;" id="r2">
+			<td> <button class="order button" onclick="showForm()"> <i> Order here </i> </button> </td>
+		</tr>
+		<!-- order form -->
+		<tr style="text-align:center;" id="form">
+			<td>
+			<form>
+				<label for="fname">First Name: </label>
+				<input type="text" id="fname" name="fname">
+				<label for="lname">Last Name: </label> 
+				<input type="text" id="lname" name="lname"><br>
+				<p> Did you hear about us from BeVital? </p>
+				<input type="radio" id="bevital_yes" name="bevital" value="Yes">
+				<label for="bevital_yes"> Yes </label>
+				<input type="radio" id="bevital_no" name="bevital" value="No"> 
+				<label for="bevital_no"> No </label>
+				<br>
+				<input type="submit" class="button" style="background-color:#630031; padding: 10px;">
+			</form>
+			</td>
+		</tr>
+		<!-- end of online ordering -->
+		<tr> <!-- footer -->
+			<td style="padding: 20px 0px 0px 0px;"> 
+				<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
+					<tr style="text-align:center; margin-left:50%;">
+						<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	
+</body>
+
+<!-- TODO 
+- *** PHP to use server scripting and utilize the info
+- add credit info, use/check credit info?
+- take order, calc subtotal
+- submit
+- update current inventory, avoid overselling
+- give link to inventory?
+-->

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<html>
+<head>
+	<title>FatDog Farmstead</title>
+	<link rel="icon" type="image/x-icon" href="Logo(small).jpg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- css needs /* to comment out, else next line is not read -->
+	<style>
+		/* <!-- maroon: #630031, orange: #cf4420 --> */
+		body {
+			background-color: black;
+		}
+		p {
+			font-size: 20px;
+		}
+		h1 {color: #cf4420;
+			font-family: georgia;
+			font-size: 50px;
+		}
+		th {
+		padding: 45px;
+		}
+		/*  <!-- aspects for all button classes --> */
+		.button {
+			border: none;
+			background-color: inherit;
+			padding: 14px 20px 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			display: inline-block; 
+			white-space: nowrap; /* <!-- puts text on one line, no split to next line --> */
+		}
+	
+		.button:hover {
+			background-color: white;
+		}
+	/* <!-- center align --> */
+		table.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		table.right {
+			margin-left: 59%;
+			margin-right: 0%;
+		}
+		.left {
+			margin-left: 20%;
+			margin-right:70%;
+		}
+		table#about {
+			width=100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		table#image {
+			width=100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#dropdown {
+			display: none;
+			background-color: #630031;
+		}
+		#x {
+			display: none;
+			margin-left: 50vw;
+		}
+
+		
+		/* <!-- small size -- ... adjusts to right side --> */
+		@media screen and (max-width:800px) {
+			.right {
+				display: none;
+			}
+			.expand {
+				display: block;
+				float: right;
+			}
+		}
+		
+		/* <!-- maximum -- adjusts to right side of screen  --> */
+		@media screen and (min-width:801px) {
+			.right { 
+				display: table-row; 
+				margin-right: 0vw;
+				float: right;
+			}
+			.expand {
+				display: none;
+			}
+			#dropdown {
+				display: none;
+			}
+			#data {
+				width: 100%;
+			}
+		}
+	</style>
+	
+	<script>
+	//***dropdowns for smaller screens***
+		function dropdown() {
+			document.getElementById("...").style.display = "none";
+			//show other buttons in separate table to right?
+			//document.getElementById("data").style.display = "flex";
+			document.getElementById("dropdown").style.display = "block";
+			document.getElementById("x").style.display = "block";
+		}
+		function collapse() { //collapse drop down menu
+			document.getElementById("x").style.display = "none";
+			document.getElementById("...").style.display = "block";
+			document.getElementById("dropdown").style.display = "none";
+			document.getElementById("data").style.display = "block";
+		}
+		
+	// **flipbook of riley**
+	</script>
+</head>
+
+<body>
+	<header style="background-color:#630031;"> <!-- top of page -->
+		<table style="width:100%;">
+			<tr> <!-- 1 row -->
+				<td style="text-align:left;">
+				<!-- logo image, left aligned -->
+				<a href="WebLanding.html"> <img src="Logo(small).jpg" alt="logo" width="75" height="75" title="Logo" style="padding: 7px 15px 5px 25px;"> </a>
+				</td>
+			
+				<!-- other tabs to other sections, right aligned -->
+				<td style="text-align:right;">
+				<!-- home, menu, contact us -->
+					<table class="right" style="border-spacing: 10px 20px 20px 20px;">
+						<tr> <!-- *make buttons -->
+							<td> <a href="WebLanding.html"> <button class="button home"> Home </button> </td>
+							<td> <a href="MenuPage.html"> <button class="button menu"> Menu </button> </a> </td>
+							<td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td>
+							<td> <a href="StoryPage.html"> <button class="button story" style="color:orange;"> <u> Our Story </u> </button> </a> </td>
+							<td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td>
+						</tr>
+					</table>
+					<table class="expand" style="text-align: right;"> <!-- dropdown button that shows only when small window -->
+						<tr> <td> <button class="button expand" id="..." onclick="dropdown()"> ... </button> </td> </tr>
+						<tr> <td> <button class="button collapse" id="x" onclick="collapse()"> X </button> </td> </tr>
+					</table>
+				</td>
+			</tr>
+		</table>			
+	</header>
+	
+	<!-- dropdown on right, hidden until used -->
+	<table id="dropdown" style="float: right;">
+		<tr> <td> <a href="WebLanding.html"> <button class="button home"> Home </button> </a> </td> </tr>
+		<tr> <td> <a href="MenuPage.html"> <button class="button menu"> Menu </button> </a> </td> </tr>
+		<tr> <td> <a href="ContactPage.html"> <button class="button contact"> Contact Us </button> </a> </td> </tr>
+		<tr> <td> <a href="StoryPage.html"> <button class="button story" style="color:#aa4420;"> <u> Our Story </u> </button> </a> </td> </tr>
+		<tr> <td> <a href="OrderPage.html"> <button class="button orders"> Order </button> </a> </td> </tr>
+	</table>
+	
+	<table style="width:100%; background-color:#1b1c1c;" class="center">
+		<tr>
+			<td style="text-align:center;">
+				<h1> Our Story </h1>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 0% 10% 0% 10%;">
+				<p> <b> Why Fat Dog? </b> </p>
+				<p> Our Fat Dog story began with just that…. a fat dog- our beautiful, happy and loyal english lab. She was our first dog and with us as our family grew in numbers over the years. 
+				She was an active dog, but, as our family grew, so did she. Our nephew started referring to her as ‘Fat Dog’ and the name stuck. 
+				Fat Dog’s name was Riley and she responded excitedly to both names very well. When she passed, it was a fast bout of cancer and affected us greatly. 
+				We decided that her legacy would live on through our business name and that all of our other dogs will have their names in any future farmstead offering as we continue to grow. 
+				The love behind our business name is passed into the way we treat all of the animals and food we raise. </p>
+			</td>
+		</tr>
+		<tr> <!-- riley image -->
+			<td style="text-align:center; padding: 0% 0% 5% 0%;"> <img src="Riley.jpg"> </td>
+		</tr>
+		<tr> <!-- footer -->
+			<td> 
+				<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
+					<tr style="text-align:center; margin-left:50%;">
+						<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
