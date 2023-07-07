@@ -9,8 +9,9 @@
 		p {
 			font-size:20px;
 		}
-		body {
+		html, body {
 			background-color: black;
+			margin: 0;
 		}
 		h1 {
 			text-align:center; 
@@ -36,26 +37,15 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		.center {
-			margin-left: auto;
-			margin-right: auto;
-			border-collapse: collapse;
-		}
-		.right {
-			margin-left:59%;
-			margin-right: 0%;
-		}
-		.left {
-			margin-right:30%;
-			margin-left:0%;
-		}
+		
 		img {
 			display: block;
-			margin-right: 10%;
 		}
 		h2 {
 			font-size: 30px;
 			text-align: right;
+			margin-block-start: 0px;
+			margin-block-end: 20px;
 		}
 		p {
 			text-align: right;
@@ -76,20 +66,6 @@
 			display: none;
 			margin-left: 50vw;
 		}
-		#parent {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-		}
-		#blurb {
-			order: 0;
-			flex-grow: 1
-			
-		}
-		#flipbook {
-			order: 1;
-			flex-grow: 1;
-		}
 		
 		/* <!-- small size -- ... adjusts to right side --> */
 		@media screen and (max-width:800px) {
@@ -104,6 +80,7 @@
 			/* <!-- adjust image below, text to top and centered --> */
 			#flipbook {
 				display: table-row;
+				
 			}
 			#blurb {
 				display: table-row;
@@ -128,10 +105,6 @@
 			}
 			#dropdown {
 				display: none;
-			}
-			
-			#blurb {
-
 			}
 
 		}
@@ -224,10 +197,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td id="blurb" style="width:50%; padding: 0px 0px 0px 10%;">
+			<td id="blurb" style="width:50%; padding: 0px 10% 0px 10%;">
 				<table style="" > <!-- text, left side -->
 					<tr>
-						<td style="padding: 20px 0px 0px 0px;">
+						<td style="padding: 0px 0px 0px 0px; margin: 0px;">
 							<h2> Ask questions or just say hello! </h2>
 							<p> We love to hear from you about what you're cooking and what you think. Email or call us, and we will get back to you soon. </p>
 						</td>
@@ -243,10 +216,10 @@
 					<tr> <td style="padding: 0px;"> <p> <a href="mailto:DTPownall@fatdogfarmstead.com"> DTPownall@fatdogfarmstead.com </a> </p> </td> </tr>
 				</table>
 			</td>
-			<td style="padding: 0px 10% 0px 0px; width: 50%;" id="flipbook">
-				<table style="float:right"> <!-- image, right side -->
-					<tr>
-						<td> <img src="img_2233.jpg" style="float:right; width:400px; height:525px;" id="img"> <!-- image --> </td>
+			<td style="padding: 0px 10% 0px 10%; width: 50%;" id="flipbook">
+				<table style="margin-right: auto; margin-left: auto;"> <!-- image, right side, centered by setting margins to auto -->
+					<tr id="image"> 
+						<td> <img src="img_2233.jpg" style="width:400px; height:525px;" id="img"> <!-- image --> </td>
 					</tr>
 					<tr style="text-align:center;">
 						<td> <button id="prev" onclick="prevImage()" class="scroll"> Prev </button> 
@@ -259,7 +232,7 @@
 		<tr> <!-- footer -->
 			<td style="padding:20px 0px 0px 0px;" colspan="2"> 
 				<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
-					<tr style="text-align:center; margin-left:50%;">
+					<tr style="text-align:center;">
 						<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
 					</tr>
 				</table>
@@ -270,8 +243,7 @@
 </html>
 
 <!-- TODO
- * centered text not padded right?
- * page spacing wrong when too big
+ * center image when small window
 -->
 
 	
