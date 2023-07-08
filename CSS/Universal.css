@@ -1,0 +1,70 @@
+/* maroon: #630031, orange: #cf4420 */
+
+/***** all universal CSS (header buttons, dropdown, window dependency) *****/
+		body {
+			background-color: #1c1c1c;
+		}
+		p {
+			font-size: 20px;
+		}
+		h1 {color: #cf4420;
+			font-family: georgia;
+			font-size: 50px;
+		}
+		th {
+			padding: 45px;
+		}
+		/*  aspects for all button classes  */
+		.button {
+			border: none;
+			background-color: inherit;
+			padding: 14px 20px 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			display: inline-block; 
+			white-space: nowrap; /*  puts text on one line, no split to next line  */
+		}
+	
+		.button:hover {
+			background-color: white;
+		}
+	
+		/* dropdowns */
+		#dropdown {
+			display: none;
+			background-color: #630031;
+		}
+		#x {
+			display: none;
+			margin-left: 50vw;
+		}
+		
+		/* ** window sizing for buttons/content ** */
+		/* <!-- small size -- ... adjusts to right side --> */
+		@media screen and (max-width:800px) {
+			.right {
+				display: none;
+			}
+			.expand {
+				display: block;
+				float: right;
+			}
+		}
+		
+		/* <!-- maximum -- adjusts to right side of screen  --> */
+		@media screen and (min-width:801px) {
+			.right { 
+				display: table-row; 
+				margin-right: 0vw;
+				float: right;
+			}
+			.expand {
+				display: none;
+			}
+			#dropdown {
+				display: none;
+			}
+			#data {
+				width: 100%;
+			}
+		}
