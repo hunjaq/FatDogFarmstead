@@ -6,14 +6,46 @@
 		}
 		p {
 			font-size: 20px;
+			color: white;
 		}
-		h1 {color: #cf4420;
+		td {
+			color: white;
+		}
+		h1 {
+			color: #cf4420;
 			font-family: georgia;
 			font-size: 50px;
 		}
 		th {
-			padding: 45px;
+			padding: 1vw;
+			font-size: 30px;
 		}
+		.pages {
+			display: table-row;
+			margin-right: 0vw;
+			float: right;
+		}
+		.expand {
+			display: none;
+		}
+		
+		/* used for weblanding */
+		#img {
+			padding: 0px 0px 0px 40px;
+			width: 400px;
+			height: 300px;
+		}
+		.tint {
+			background-image:
+				linear-gradient( /* <!-- give tint to image to make text better readable --> */
+					rgba(0, 0, 0, .33),
+					rgba(0, 0, 0, .33)
+				),
+				url("../IMG/Chickens_resized_1.jpg");
+			padding: 0% 0% 5% 10%;
+			height: 600px;
+		}
+		
 		/*  aspects for all button classes  */
 		.button {
 			border: none;
@@ -23,6 +55,7 @@
 			cursor: pointer;
 			display: inline-block; 
 			white-space: nowrap; /*  puts text on one line, no split to next line  */
+			color: white;
 		}
 	
 		.button:hover {
@@ -41,8 +74,8 @@
 		
 		/* ** window sizing for buttons/content ** */
 		/* <!-- small size -- ... adjusts to right side --> */
-		@media screen and (max-width:800px) {
-			.right {
+		@media only screen and (max-width:800px) {
+			.pages {
 				display: none;
 			}
 			.expand {
@@ -51,20 +84,42 @@
 			}
 		}
 		
-		/* <!-- maximum -- adjusts to right side of screen  --> */
-		@media screen and (min-width:801px) {
-			.right { 
-				display: table-row; 
-				margin-right: 0vw;
-				float: right;
+
+		/* account for mobile -- diff image */
+		/* 'if size < 426' */
+		@media only screen and (max-width: 426px) {
+			.pages {
+				display: none;
 			}
 			.expand {
-				display: none;
+				display: block;
+				float: right;
 			}
-			#dropdown {
-				display: none;
-			}
-			#data {
+			.tint {
+				background-image:
+				linear-gradient( /* <!-- give tint to image to make text better readable --> */
+					rgba(0, 0, 0, .33),
+					rgba(0, 0, 0, .33)
+				),
+				url("../IMG/whitebirds1.jpg");
+				background-size: 120vw;
 				width: 100%;
+				height: 150vw;
+			}
+			#img {
+				padding: 0px;
+				float: center;
+				width: 100vw;
+				max-width: 400px;
+			}
+			P {
+				font-size: 5vw;
+			}
+			h1 {
+				font-size: 10vw;
 			}
 		}
+		
+		/*
+		*** account for landscape orientations? ***
+		*/
