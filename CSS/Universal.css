@@ -45,6 +45,13 @@
 			padding: 0% 0% 5% 10%;
 			height: 600px;
 		}
+		#site {
+			width: 80%;
+		}
+		#second {
+			padding: 30px;
+			text-align: right;
+		}
 		
 		/*  aspects for all button classes  */
 		.button {
@@ -117,6 +124,13 @@
 			}
 			h1 {
 				font-size: 10vw;
+			}
+			#site {
+				width: 100%;
+			}
+			#second {
+				padding: 0px;
+				text-align: center;
 			}
 		}
 		
