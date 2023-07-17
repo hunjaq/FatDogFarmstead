@@ -3,6 +3,7 @@
 /***** all universal CSS (header buttons, dropdown, window dependency) *****/
 		body {
 			background-color: #1c1c1c;
+			width: 100vw;
 		}
 		p {
 			font-size: 20px;
@@ -45,7 +46,7 @@
 			padding: 0% 0% 5% 10%;
 			height: 600px;
 		}
-		#site {
+		#pagedata {
 			width: 80%;
 		}
 		#second {
@@ -125,7 +126,7 @@
 			h1 {
 				font-size: 10vw;
 			}
-			#site {
+			#pagedata {
 				width: 100%;
 			}
 			#second {
