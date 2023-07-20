@@ -20,10 +20,11 @@
 		th {
 			padding: 1vw;
 			font-size: 30px;
+			border-right: 3px solid white;
 		}
 		.pages {
 			display: table-row;
-			margin-right: 0vw;
+			margin-right: 2vw;
 			float: right;
 		}
 		.expand {
@@ -31,10 +32,15 @@
 		}
 		
 		/* used for weblanding */
-		#img {
+		/* horizontal orientations */
+		#img-wide {
 			padding: 0px 0px 0px 40px;
 			width: 400px;
 			height: 300px;
+		}
+		/* vertical orientations */
+		#img-long {
+			
 		}
 		.tint {
 			background-image:
@@ -45,9 +51,13 @@
 				url("../IMG/Chickens_resized_1.jpg");
 			padding: 0% 0% 5% 10%;
 			height: 600px;
+			
 		}
-		#pagedata {
+		.pagedata {
 			width: 80%;
+			max-width: 1200px;
+			margin: auto;
+			float: center;
 		}
 		#second {
 			padding: 30px;
@@ -77,11 +87,13 @@
 		}
 		#x {
 			display: none;
-			margin-left: 50vw;
+			float: right;
+			
 		}
 		
 		/* ** window sizing for buttons/content ** */
 		/* <!-- small size -- ... adjusts to right side --> */
+		/* tablet? */
 		@media only screen and (max-width:800px) {
 			.pages {
 				display: none;
@@ -114,17 +126,28 @@
 				width: 100%;
 				height: 150vw;
 			}
-			#img {
+			#img-wide {
 				padding: 0px;
 				float: center;
 				width: 100vw;
 				max-width: 400px;
+			}
+			#img-long {
+				padding: 0px;
+				float: center;
+				width:75vw;
+				max-width: 300px;
+				height: 100vw;
+				max-height: 400px;
 			}
 			P {
 				font-size: 5vw;
 			}
 			h1 {
 				font-size: 10vw;
+			}
+			th {
+				font-size: 5vw;
 			}
 			#pagedata {
 				width: 100%;

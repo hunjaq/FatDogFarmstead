@@ -122,7 +122,7 @@
 	</table>
 	
 	<!-- page data -->
-	<table style="width:100%; background-color:#1b1c1c;" id="pagedata">
+	<table style="width:100%; background-color:#1b1c1c;" class="pagedata">
 		<tr style="text-align: center;">
 			<td colspan="2">
 				<h1> Contact Us </h1>
@@ -151,7 +151,7 @@
 			<td style="padding: 0px 10% 0px 10%; width: 50%;" id="flipbook">
 				<table style="margin-right: auto; margin-left: auto;"> <!-- image, right side, centered by setting margins to auto -->
 					<tr id="image"> 
-						<td> <img src="IMG/cookedchicken.jpg" style="width:400px; height:525px;" id="img"> <!-- image --> </td>
+						<td> <img src="IMG/cookedchicken.jpg" id="img-long"> <!-- image --> </td>
 					</tr>
 					<tr style="text-align:center;">
 						<td> <button id="prev" onclick="prevImage()" class="scroll"> Prev </button> 
@@ -160,16 +160,11 @@
 				</table>
 			</td>
 		</tr>
-		
-		<tr> <!-- footer -->
-			<td style="padding:20px 0px 0px 0px;" colspan="2"> 
-				
-			</td>
-		</tr>
+	
 	</table>
 	
 	<footer>
-		<table class="center" style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
+		<table style="width:100%; height:50px; background-color: #630031; padding: 20px 0px 20px 0px;">
 			<tr style="text-align:center;">
 				<td> <sub> Copyright © 2023 Fatdog Farmstead - All Rights Reserved. </sub> </td>
 			</tr>
@@ -180,6 +175,9 @@
 
 <!-- TODO
  * smaller image?
+ * image not centered in area -- padding wrong? margins not adjusting?
+ * same problem as weblanding with image not moving
+ * scale image with screen size
 -->
 
 	
