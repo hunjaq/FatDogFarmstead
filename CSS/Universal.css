@@ -27,8 +27,16 @@
 			margin-right: 2vw;
 			float: right;
 		}
-		.expand {
+		button.expand {
 			display: none;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		button.collapse {
+			display: none;
+			float: right;
+			font-size: 20px;
+			font-weight: bold;
 		}
 		
 		/* used for weblanding */
@@ -86,11 +94,7 @@
 			display: none;
 			background-color: #630031;
 		}
-		#x {
-			display: none;
-			float: right;
-			
-		}
+
 		
 		/* ** window sizing for buttons/content ** */
 		/* <!-- small size -- ... adjusts to right side --> */
@@ -99,7 +103,7 @@
 			.pages {
 				display: none;
 			}
-			.expand {
+			button.expand {
 				display: block;
 				float: right;
 			}
@@ -112,7 +116,7 @@
 			.pages {
 				display: none;
 			}
-			.expand {
+			button.expand {
 				display: block;
 				float: right;
 			}
